@@ -1,3 +1,7 @@
 <% provide(:title, "Top") %>
 <h1>hello world</h1>
 <p>人口インターン前カリキュラムのトップページです</p>
+
+<% if !user_signed_in? %>
+  <%= button_to "ログイン", new_user_session_path %>
+<% end %>
