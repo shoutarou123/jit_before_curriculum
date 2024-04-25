@@ -5,3 +5,9 @@
 <% if !user_signed_in? %>
   <%= button_to "ログイン", new_user_session_path %>
 <% end %>
+<% if user_signed_in? %>
+  <%= button_to "ユーザー編集", edit_user_registration_path, method: :get %>
+<% end %>
+<% if user_signed_in? %>
+  <%= button_to "letter", letter_opener_web_path, method: :get %>
+<% end %>

@@ -11,14 +11,14 @@
 
   <body>
   <header>
-      <% if user_signed_in? %>
-        <li>
-          <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-      <% end %>
   </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+  <footer>
+    <% if user_signed_in? %>
+      <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <% end %>
+  </footer>
   </body>
 </html>
