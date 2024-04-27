@@ -1,5 +1,6 @@
 # README
-git hub ブランチプロテクト設定できたか確認
+.git表示しテンプレート追加
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
