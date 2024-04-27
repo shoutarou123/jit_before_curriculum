@@ -1,5 +1,5 @@
 # README
-.git表示しテンプレート追加
+.git表示しテンプレート追加!
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
