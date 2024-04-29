@@ -1,5 +1,5 @@
 # README
-.git表示しテンプレート追加!
+githubにプルリクエストテンプレート作成
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
