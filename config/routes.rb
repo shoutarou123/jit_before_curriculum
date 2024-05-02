@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#top'
-  devise_for :users, controllers: {registrations: 'users/registrations'}      
+  devise_for :users, controllers: {passwords: 'users/passwords', registrations: 'users/registrations'}      
   namespace :users do
     get 'dash_boards/index'
   end
