@@ -28,7 +28,11 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'bootstrap', '5.3' # 追加
+gem 'jquery-rails' # 追加
 gem 'devise'
+# devise (4.9.4)
+
 gem 'letter_opener_web'
 
 group :development, :test do
