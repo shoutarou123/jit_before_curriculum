@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+    require_treeには引数として与えられたディレクトリ以下のCSSファイルをアルファベット順に全て読み込むという意味があります。
+    require_treeの引数には.(ドット)が渡されています。引数.(ドット)はカレントディレクトリを表します。
+    つまり、この記述によってapp/assets/stylesheetsというディレクトリにあるCSSファイルやSCSSファイルは全て読み込まれることになります。
+
+    require_selfはapplication.css自体を最終的なスタイルシートに含めることを指定しています。
+    この行がないと、このファイルに書かれたcssは無視されます。
+ */
+ @import "bootstrap";
+
+// sign_up画面
+
+.sign_up {
+   margin: 10px;
+   letter-spacing: -1px;
+ }
+
+// 各ボタン（user_edit以外）
+.actions {
+  margin-top: 10px;
+}
+
+// user_edit画面
+
+.user_edit {
+   @extend .sign_up;
+}
+
+.btn-user_edit {
+  margin-top: 10px;
+}
+
+// sign_in画面
+
+.log_in {
+   @extend .sign_up;
+}
+
+// confirmation_new画面
+
+.confirmation_new {
+   @extend .sign_up;
+}
+
+// password_new画面
+
+.password_new {
+   @extend .sign_up;
+}
+
+// password_edit画面
+
+.password_edit {
+   @extend .sign_up;
+}
