@@ -19,12 +19,22 @@
  */
  @import "bootstrap";
 
-// sign_up画面
+// logoutボタン
+.btn-logout {
+  margin: 10px;
 
+}
+
+// top画面
+.top {
+  margin: 10px;
+  letter-spacing: -1px;
+}
+
+// sign_up画面
 .sign_up {
-   margin: 10px;
-   letter-spacing: -1px;
- }
+  @extend .top;
+}
 
 // 各ボタン（user_edit以外）
 .actions {
@@ -32,9 +42,8 @@
 }
 
 // user_edit画面
-
 .user_edit {
-   @extend .sign_up;
+  @extend .top;
 }
 
 .btn-user_edit {
@@ -42,25 +51,26 @@
 }
 
 // sign_in画面
-
 .log_in {
-   @extend .sign_up;
+  @extend .top;
 }
 
 // confirmation_new画面
-
 .confirmation_new {
-   @extend .sign_up;
+  @extend .top;
 }
 
 // password_new画面
-
 .password_new {
-   @extend .sign_up;
+  @extend .top;
 }
 
 // password_edit画面
-
 .password_edit {
-   @extend .sign_up;
+  @extend .top;
+}
+
+// dash_board画面
+.dash_board {
+  @extend .top;
 }
