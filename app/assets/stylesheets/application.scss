@@ -26,14 +26,14 @@
 }
 
 // top画面
-.top {
+.top_page {
   margin: 10px;
   letter-spacing: -1px;
 }
 
 // sign_up画面
 .sign_up {
-  @extend .top;
+  @extend .top_page;
 }
 
 // 各ボタン（user_edit以外）
@@ -43,7 +43,7 @@
 
 // user_edit画面
 .user_edit {
-  @extend .top;
+  @extend .top_page;
 }
 
 .btn-user_edit {
@@ -52,25 +52,25 @@
 
 // sign_in画面
 .log_in {
-  @extend .top;
+  @extend .top_page;
 }
 
 // confirmation_new画面
 .confirmation_new {
-  @extend .top;
+  @extend .top_page;
 }
 
 // password_new画面
 .password_new {
-  @extend .top;
+  @extend .top_page;
 }
 
 // password_edit画面
 .password_edit {
-  @extend .top;
+  @extend .top_page;
 }
 
 // dash_board画面
 .dash_board {
-  @extend .top;
+  @extend .top_page;
 }
