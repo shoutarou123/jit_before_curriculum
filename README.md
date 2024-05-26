@@ -1,4 +1,7 @@
 # README
+5/26 git pull origin masterでremoteのfeat/devise_2をpull
+     feat/devise_japaneseのbranch作成
+
 githubにプルリクエストテンプレート作成
 
 This README would normally document whatever steps are necessary to get the
