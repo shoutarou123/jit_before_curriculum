@@ -1,23 +1,27 @@
 <% provide(:title, "Top") %>
-<div class="m-2">
-  <h1>hello world</h1>
-  <p>人口インターン前カリキュラムのトップページです</p>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-3 offset-md-4">
+        <h1>hello world</h1>
+        <p>人口インターン前カリキュラムのトップページです</p>
 
-  <% if !user_signed_in? %>
-    <p>
-      <%= link_to "ログイン", new_user_session_path %>
-    </p>
-  <% end %>
-  <% if user_signed_in? %>
-    <p>
-      <%= link_to "ユーザー編集", edit_user_registration_path %>
-      <!--button_toだとURLがusers/edit?になる-->
-    </p>
-  <% end %>
-  <% if user_signed_in? %>
-    <p>
-      <%= link_to "letter", letter_opener_web_path %>
-      <!--button_toだとURLの最後に?が付く-->
-    </p>
-  <% end %>
+        <% if !user_signed_in? %>
+          <p>
+            <%= link_to "ログイン", new_user_session_path %>
+          </p>
+        <% end %>
+        <% if user_signed_in? %>
+          <p>
+            <%= link_to "ユーザー編集", edit_user_registration_path %>
+            <!--button_toだとURLがusers/edit?になる-->
+          </p>
+        <% end %>
+        <% if user_signed_in? %>
+          <p>
+            <%= link_to "letter", letter_opener_web_path %>
+            <!--button_toだとURLの最後に?が付く-->
+          </p>
+        <% end %>
+    </div>
+  </div>
 </div>
