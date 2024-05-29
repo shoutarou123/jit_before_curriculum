@@ -26,7 +26,7 @@
           <div class="col-md-3 offset-md-4">
             <footer>
               <% if user_signed_in? %>
-                <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-secondary m-2" %>
+                <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-warning m-2" %>
                 <!--link_toだとgetメソッドになってしまうためbotton_toにしている-->
               <% end %>
           </div>
