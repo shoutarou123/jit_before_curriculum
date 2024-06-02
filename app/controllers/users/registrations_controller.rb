@@ -60,6 +60,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   def after_update_path_for(resource)
-    users_dash_boards_index_path
+    users_dash_boards_path
   end
 end
