@@ -18,8 +18,17 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # protected
+  protected
 
+    # ログインした後、ダッシュボード画面にリダイレクトする
+    def after_sign_in_path_for(resource)
+      users_dash_boards_path
+    end
+
+    # ログアウトした後、ログイン画面にリダイレクトする
+    def after_sign_out_path_for(resource)
+      new_user_session_path
+    end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
