@@ -1,12 +1,11 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller? 
-  # deviseの処理を行う場合、configure_permitted_parametersを実行して
+  # devise利用の機能(ユーザー登録やログイン認証等)を使う前に、configure_permitted_parametersメソッドが実行される
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  private
+  protected
 
-    def configure_permitted_parameters
-      if resource_class == User
-      devise_parameter_sanitizer.permit(:sign_up,keys:[:name])
-      end
-    end
+  # サインアップの際に「name」のデータ操作を許可する ストロングパラメータと同様の機能
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
 end
