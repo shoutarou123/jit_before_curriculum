@@ -5,17 +5,17 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new
+    @article = current_user.articles.new
   end
 
   def create
-    @article = Article.new(params[:id])
+    @article = current_user.articles.new(article_params)
     if @article.save
-    flash[:success] = '新規投稿に成功しました。'
-    redirect_to article_url(@article)
+      flash[:success] = '新規投稿に成功しました。'
+      redirect_to root_path
     else
-    flash[:danger] = '新規投稿に失敗しました。'
-    render :new
+      flash[:danger] = '新規投稿に失敗しました。'
+      render :new
     end
   end
 
@@ -23,4 +23,9 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
   
+  private
+    def article_params
+      params.require(:article).permit(:title, :content)
+    end
+
 end
