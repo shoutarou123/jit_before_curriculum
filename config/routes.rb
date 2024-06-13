@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     sessions:       'users/sessions'
   }
   # ログイン済であればルート先をダッシュボードにする
-  authenticated do
+  authenticated :user do
     root to: 'users/dash_boards#index', as: :dash_boards
   end
 
