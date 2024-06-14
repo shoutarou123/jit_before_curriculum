@@ -22,7 +22,11 @@
               <td><%= link_to "詳細", '#', class: "btn btn-primary" %></td>
               <td><%= article.title %></td>
               <td><%= article.content %></td>
-              <td></td>
+              <td>
+                  <% article.image.each do |image| %>
+                    <%= image_tag image, size: "150x150" %>
+                  <% end %>
+              </td>
               <td>
                 <%= link_to "編集", '#', class: "btn btn-success" %>
                 <%= link_to "削除", '#', class: "btn btn-danger" %>

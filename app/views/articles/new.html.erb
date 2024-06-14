@@ -15,6 +15,11 @@
           <%= f.text_area :content %>
         </div>
 
+        <div class="field m-2"><br />
+          <%= f.label :image %>
+          <%= f.file_field :image, accept: "image/*" %>
+        </div>
+
         <%= f.submit "新規作成", class: "btn btn-primary" %>
         <% end %>
       </div>
