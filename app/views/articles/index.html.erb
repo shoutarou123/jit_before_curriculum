@@ -16,14 +16,18 @@
               <th>編集・削除</th>
             </tr>
           </thead>
-          <tbody class="table-group-divider">
+          <tbody class="border-bottom">
             <tr>
               <% @articles.each do |article| %>
-              <td></td>
+              <td><%= link_to "詳細", '#', class: "btn btn-primary" %></td>
               <td><%= article.title %></td>
               <td><%= article.content %></td>
               <td></td>
-              <td></td>
+              <td>
+                <%= link_to "編集", '#', class: "btn btn-success" %>
+                <%= link_to "削除", '#', class: "btn btn-danger" %>
+              </td>
+              
               <% end %>
             </tr>
           </tbody>
