@@ -5,16 +5,16 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = current_user.articles.new
+    @article = Article.new
   end
 
   def create
-    @article = current_user.articles.new(article_params)
+    @article = Article.new(article_params)
     if @article.save
       flash[:success] = '新規投稿に成功しました。'
-      redirect_to root_path
+      redirect_to user_path(@article.user_id)
     else
-      flash[:danger] = '新規投稿に失敗しました。'
+      flash[:danger] = "新規投稿に失敗しました: #{@article.errors.full_messages.join(', ')}"
       render :new
     end
   end
@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
   
   private
     def article_params
-      params.require(:article).permit(:title, :content, image: [])
+      params.require(:article).permit(:title, :content, :image)
     end
 
 end

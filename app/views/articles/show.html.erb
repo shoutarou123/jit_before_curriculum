@@ -1,0 +1,30 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md offset-md-1">
+      <div class="m-2">
+        <h1>詳細画面</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>タイトル</th>
+              <th>内容</th>
+              <th>画像</th>
+            </tr>
+          </thead>
+           <tbody class="border-bottom">
+            <tr>
+              <td><%= @article.title %></td>
+              <td><%= @article.content %></td>
+              <td>
+              <% if @article.image.attached? %>
+                <%= image_tag @article.image.variant(resize_to_limit: [100, 100]) %>
+              <% else %>
+                画像なし
+              <% end %>
+              </td>
+           </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
