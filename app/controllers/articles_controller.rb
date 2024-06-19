@@ -11,7 +11,8 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.new(article_params)
     if @article.save
-      redirect_to article_path(current_user), notice: "投稿成功"
+      flash[:success] = "投稿に成功しました。"
+      redirect_to article_path(@article)
     else
       Rails.logger.debug @article.errors.full_messages
       render :new

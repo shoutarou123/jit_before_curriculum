@@ -17,7 +17,7 @@
           <tbody class="border-bottom">
             <% @articles.each do |article| %>
               <tr>
-                <td><%= link_to "詳細", article_path(current_user), class: "btn btn-primary" %></td>
+                <td><%= link_to "詳細", article_path(article), class: "btn btn-primary" %></td>
                 <td><%= article.title %></td>
                 <td><%= article.content %></td>
                 <td>
