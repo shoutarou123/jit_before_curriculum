@@ -15,24 +15,24 @@
             </tr>
           </thead>
           <tbody class="border-bottom">
-            <tr>
-              <td><%= link_to "詳細", article_path(current_user), class: "btn btn-primary" %></td>
-              <% @articles.each do |article| %>
-              <td><%= article.title %></td>
-              <td><%= article.content %></td>
-              <td>
-                <% if article.image.attached? %>
-                  <%= image_tag article.image.variant(resize_to_limit: [100, 100]) %>
-                <% else %>
-                  画像なし
-                <% end %>
-              </td>
-              <% end %>
-              <td>
-                <%= link_to "編集", '#', class: "btn btn-success" %>
-                <%= link_to "削除", '#', class: "btn btn-danger" %>
-              </td>
-            </tr>
+            <% @articles.each do |article| %>
+              <tr>
+                <td><%= link_to "詳細", article_path(current_user), class: "btn btn-primary" %></td>
+                <td><%= article.title %></td>
+                <td><%= article.content %></td>
+                <td>
+                  <% if article.image.attached? %>
+                    <%= image_tag article.image.variant(resize_to_limit: [100, 100]) %>
+                  <% else %>
+                    画像なし
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to "編集", '#', class: "btn btn-success" %>
+                  <%= link_to "削除", '#', class: "btn btn-danger" %>
+                </td>
+              </tr>
+            <% end %>
           </tbody>
         </table>
       </div>
