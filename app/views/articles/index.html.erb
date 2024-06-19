@@ -20,11 +20,13 @@
               <% @articles.each do |article| %>
               <td><%= article.title %></td>
               <td><%= article.content %></td>
+              <td>
                 <% if article.image.attached? %>
-                  <td><%= image_tag article.image.variant(resize_to_limit: [100, 100]) %></td>
+                  <%= image_tag article.image.variant(resize_to_limit: [100, 100]) %>
                 <% else %>
-                  <td>画像なし</td>
+                  画像なし
                 <% end %>
+              </td>
               <% end %>
               <td>
                 <%= link_to "編集", '#', class: "btn btn-success" %>

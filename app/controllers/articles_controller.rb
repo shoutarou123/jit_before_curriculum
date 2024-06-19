@@ -9,18 +9,17 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
     if @article.save
-      flash[:success] = '新規投稿に成功しました。'
-      redirect_to user_path(@article.user_id)
+      redirect_to article_path(current_user), notice: "投稿成功"
     else
-      flash[:danger] = "新規投稿に失敗しました: #{@article.errors.full_messages.join(', ')}"
+      Rails.logger.debug @article.errors.full_messages
       render :new
     end
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
   end
   
   private

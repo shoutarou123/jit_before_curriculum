@@ -3,7 +3,7 @@
     <div class="col-md-3 offset-md-4">
       <div class="m-2">
         <h1>記事の新規作成</h1>
-        <%= form_with(model: @article, local: true, html: { multipart: true }) do |f| %>
+        <%= form_with model: @article, local: true do |f| %>
 
         <div class="field m-2"><br />
           <%= f.label :title %>
