@@ -12,9 +12,9 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params)
     if @article.save
       flash[:success] = "投稿に成功しました。"
+      debugger
       redirect_to article_path(@article)
     else
-      Rails.logger.debug @article.errors.full_messages
       render :new
     end
   end
