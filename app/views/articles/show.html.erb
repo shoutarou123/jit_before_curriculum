@@ -24,6 +24,8 @@
               </td>
            </tbody>
         </table>
+        <%= link_to "編集", '#', class: "btn btn-success"%>
+        <%= link_to "削除", @article, data: { turbo_method: :delete, confirm: "投稿を削除してよろしいですか？"}, class: "btn btn-danger" %>
         <%= link_to "記事一覧へ戻る", articles_path, class: "btn btn-primary" %>
       </div>
     </div>

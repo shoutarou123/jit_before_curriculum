@@ -23,6 +23,16 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.find(params[:id])
   end
   
+  def destroy
+    @article = current_user.articles.find(params[:id])
+    if @article.destroy
+      flash[:success] = "投稿を削除しました"
+      redirect_to articles_path
+    else
+      render :index
+    end
+  end
+
   private
     def article_params
       params.require(:article).permit(:title, :content, :image)
