@@ -21,6 +21,20 @@ class ArticlesController < ApplicationController
   def show
     @article = current_user.articles.find(params[:id])
   end
+
+  def edit
+    @article = current_user.articles.find(params[:id])
+  end
+
+  def update
+    @article = current_user.articles.find(params[:id])
+    if @article.update(article_params)
+      flash[:notice] = "投稿の編集に成功しました"
+      redirect_to article_path(@article)
+    else
+      render :edit
+    end
+  end
   
   def destroy
     @article = current_user.articles.find(params[:id])
