@@ -1,4 +1,5 @@
 <%= form_for(@article) do |f| %>
+<%= render 'article_error_messages' %>
 
   <div class="field m-2">
     <%= f.label :title %><br />

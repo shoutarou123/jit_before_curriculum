@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :correct_user, only: [:show, :edit, :destory]
+
 
   def index
     @articles = Article.all
@@ -49,6 +52,11 @@ class ArticlesController < ApplicationController
   private
     def article_params
       params.require(:article).permit(:title, :content, :image)
+    end
+
+    def correct_user
+      @article = current_user.articles.find_by(id: params[:id])
+      redirect_to articles_path, notice: "この記事を編集する権限がありません" if @article.nil?
     end
 
 end

@@ -5,6 +5,7 @@
         <h1>記事一覧</h1>
         <div class="d-grid gap-2 col-6 mx-auto">
           <%= link_to "記事新規作成", new_article_path, class: "btn btn-primary" %>
+          <%= link_to "ダッシュボードへ",users_dash_boards_path, class: "btn btn-secondary"%>
         </div>
         <table class="table">
           <thead>
@@ -19,7 +20,11 @@
           <tbody class="border-bottom">
             <% @articles.each do |article| %>
               <tr>
-                <td><%= link_to "詳細", article_path(article), class: "btn btn-primary" %></td>
+                <% if article.user === current_user %>
+                  <td><%= link_to "詳細", article_path(article), class: "btn btn-primary" %></td>
+                <% else %>
+                  <td></td>
+               <% end %>
                 <td><%= article.title %></td>
                 <td><%= article.content %></td>
                 <td>
@@ -29,15 +34,14 @@
                     画像なし
                   <% end %>
                 </td>
+                <% if article.user === current_user %>
                 <td>
                   <%= link_to "編集", edit_article_path(article), class: "btn btn-success" %>
                   <%= link_to "削除", article_path(article), method: :delete, data: { confirm: "投稿を削除してよろしいですか?" }, class: "btn btn-danger" %>
-                  <%
-=begin%>
- <%= link_to "削除", article_path(article), data: { turbo_method: :delete, confirm: "投稿を削除してよろしいですか？"}, class: "btn btn-danger" %> 
-<%
-=end%>
                 </td>
+                <% else %>
+                  <td></td>
+                <% end %>
               </tr>
             <% end %>
           </tbody>
