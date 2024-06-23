@@ -1,29 +1,11 @@
+<% provide(:button_text, '更新する') %>
 <div class="container text-center">
   <div class="row">
-    <div class="col-md offset-md-1">
+    <div class="col-md-3 offset-md-4">
       <div class="m-2">
         <h1>記事の編集</h1>
-        <%= form_with model: @article, local: true do |f| %>
-
-        <div class="field m-2"><br />
-          <%= f.label :title %>
-          <%= f.text_field :title %>
-        </div>
-
-        <div class="field m-2"><br />
-          <%= f.label :content %>
-          <%= f.text_area :content %>
-        </div>
-
-        <div class="field m-2"><br />
-          <%= f.label :image %>
-          <%= f.file_field :image %>
-        </div>
-
-        <%= f.submit "更新する", class: "btn btn-primary" %>
-        <% end %>
+        <%= render 'form' %>
       </div>
     </div>
   </div>
 </div>
-<%= link_to "戻る", :back %>
