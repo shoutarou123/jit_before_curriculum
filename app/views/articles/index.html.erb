@@ -29,7 +29,12 @@
                 </td>
                 <td>
                   <%= link_to "編集", '#', class: "btn btn-success" %>
-                  <%= link_to "削除", '#', class: "btn btn-danger" %>
+                  <%= link_to "削除", article_path(article), method: :delete, data: { confirm: "投稿を削除してよろしいですか?" }, class: "btn btn-danger" %>
+                  <%
+=begin%>
+ <%= link_to "削除", article_path(article), data: { turbo_method: :delete, confirm: "投稿を削除してよろしいですか？"}, class: "btn btn-danger" %> 
+<%
+=end%>
                 </td>
               </tr>
             <% end %>

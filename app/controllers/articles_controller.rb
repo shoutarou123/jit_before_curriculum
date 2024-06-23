@@ -11,8 +11,7 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.new(article_params)
     if @article.save
-      flash[:success] = "投稿に成功しました。"
-      debugger
+      flash[:notice] = "投稿に成功しました。"
       redirect_to article_path(@article)
     else
       render :new
@@ -26,7 +25,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = current_user.articles.find(params[:id])
     if @article.destroy
-      flash[:success] = "投稿を削除しました"
+      flash[:notice] = "投稿を削除しました"
       redirect_to articles_path
     else
       render :index
