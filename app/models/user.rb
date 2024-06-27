@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  has_many :dashboards
   has_many :articles, dependent: :destroy
   validates :name, presence: true, on: :create
   # Include default devise modules. Others available are:
