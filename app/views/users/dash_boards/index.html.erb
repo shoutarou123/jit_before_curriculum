@@ -3,13 +3,18 @@
     <div class="col-md-3 offset-md-4">
       <div class="m-2">
         <h1>DashBoards</h1>
-        <h2>sample</h2>
+        <h2><%= current_user.name %></h2>
           <% if user_signed_in? %>
-          <p>
-            <%= link_to "編集", edit_user_registration_path, class: "btn btn-primary" %>
+          <div class="d-grid gap-2 col-12 mx-auto">
+            <%= link_to "記事一覧", articles_path, class: "btn btn-primary mt-2" %>
+          
+            <%= link_to "編集", edit_user_registration_path, class: "btn btn-primary mt-2" %>
             <!--button_toだとURLがusers/edit?になる-->
-          </p>
-        <% end %>
+          
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-warning mt-2" %>
+          </div>
+          <% end %>
+          </div>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     sessions:       'users/sessions'
   }
   # ログイン済であればルート先をダッシュボードにする
-  authenticated do
+  authenticated :user do
     root to: 'users/dash_boards#index', as: :dash_boards
   end
 
@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
+  scope '/users' do
+    resources :articles
+  end
 end
